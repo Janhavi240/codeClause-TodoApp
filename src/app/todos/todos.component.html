@@ -1,0 +1,25 @@
+
+
+<!-- <div class="container-fluid bg-light"> -->
+  <!-- <div class="container bg-light "> -->
+<body>
+<form class="container" >
+      <div class="row mt-2 " style="height:400px">
+          <div class="col"></div>
+          <div class="col-md-5 bg-danger-subtle  shadow ">
+            <div class="card  mt-4 center">
+              <h4 class="text-black center p-3 pt-2  pb-2">To Do App</h4>
+          </div>
+<div class="todos">
+	<form style="display:flexbox;" (submit)="addTodo()">
+		<input	type="text" 	name="inputTodo"	placeholder="Enter todo..." 	class="todo-input"	[(ngModel)]="inputTodo"/>
+		<input type="submit" value="Add Todo" class="todo-submit" />
+
+	<div *ngFor="let todo of todos; let i = index;" class="todo {{ (todo.completed ? 'done' : '') }}">
+		<div class="id">{{ i }}</div>
+		<div class="content" (click)="toggleDone(i)">{{ todo.content }}</div>
+		<button class="delete" (click)="deleteTodo(i)">Remove</button>
+	</div>
+
+</form>
+
